@@ -37,7 +37,7 @@ def clamp(n, minn, maxn):
     return max(min(maxn, n), minn)
 
 def dfs(forwarding_probabilities, node, vector):
-    if node == NUM_NODES - 1:		# Destination node 
+    if node == NUM_NODES - 1:		# DST node (Destination node)
         return 1
     num=0
     for i in range(NUM_NODES):
@@ -54,7 +54,7 @@ def evaluate(forwarding_probabilities):
     for i in range(100):
         vector = [0]*NUM_NODES
         vector[0] = 1
-        temp=dfs(forwarding_probabilities, 0, vector)	# Source node
+        temp=dfs(forwarding_probabilities, 0, vector)	# SRC node (Source node)
         delivered_packets+=temp
         if temp >= 1:
             success+=1
